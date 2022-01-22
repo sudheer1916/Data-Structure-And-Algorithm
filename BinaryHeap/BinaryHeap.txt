@@ -1,0 +1,20 @@
+Binary Heap 
+-> used to implement heapsort.
+-> used mainly to implement Priority queue
+Priority Queue are useful in many standard Algorithms like :-
+Dijkstra's shortest path algorithm, Prim's minimam spanning tree algorithm, hoffman coding.
+Most of the time, Priority queue is implemented using heap data structer
+MinHeap :- highest Priority item is assigned to lowest value
+MaxHeap :- highest Priority item is assigned to highest value
+
+Binary Heap is a complete Binary Tree(i.e no gaps b/w the tree)
+because it is stored as an array
+left(i) = 2i+1
+right(i) = 2i+2
+parent(i) = floor((i-1)/2)
+
+MinHeap :- 
+-> complete Binary tree
+-> Every node has value smaller than its descendants.
+-> pictorial representation :- Binary tree but,
+   actual representation is an array. 
