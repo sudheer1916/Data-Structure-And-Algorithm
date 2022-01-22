@@ -1,0 +1,25 @@
+Queue is First-In-First-Out (FIFO).
+methods :- enqueue,dequeue,getFront,getRear,size,isEmpty
+Applications in real World :- 
+-> Single Resource and Multiple Consumers(eg:- ticket counters)
+-> to maintain Synchronization b/w slow and fast devices.
+-> In Operating Systems(Semaphores, FCFS scheduling,spolling(in printer),
+                        buffers for devices like keyboard typing)
+-> in computer networks (routers/switches and mail Queues)
+-> variations :- Deque,priority Queue and Double-Ended priority Queue
+
+//Queue in java :-
+Queue is an interface, which is implemented by LinkedLists and arrayDeque
+where as Queue interface inherts from Collection intetrface.
+//interface implemented by multiple classes
+//offer() :- add an element to end of Queue
+//peek() :- get the first item
+//poll():- remove the front item
+these above functions do not throws exception
+
+//element() :- add an element to end of Queue
+//add() :- get the first item
+//remove():- remove the front item
+these above functions do throws exception
+
+//all method here in arrayDeque and LinkedLists are O(1).
