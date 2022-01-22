@@ -1,0 +1,28 @@
+-> all the data structres before tree are organised in sequential order,
+   but tree is in hierarchical manner.
+-> degree :- no of children it has.
+-> descendants :- the subtree of a given node.
+-> internal node :- all the node which do not have degree '0' i.e not leaf nodes
+
+-> applications :- 
+   -> to represent hierarchical data like organisation structure,
+      folder structure,html/xml content(json objects),inheritence(OOP)
+   -> binary search tree
+   -> binary heap (priority queue)
+   -> B and B+ trees in DBMS (for indexing)
+   -> spanning(in bridges) and shortest path trees(in routers) in computer networks
+   -> parse tree,expression tree in compilers
+   -> trie represents dictonaries also supports prefex search
+   -> sufix tree (do fast searches in a string)
+   -> binary index tree
+   -> segment tree 
+
+-> binary tree :- each node has atmost two children
+-> tree traversal :- 
+   Tree Traversal is basically going through every node(key) exactly once.
+   Types of Tree Traversal :-
+   i.e. Breadth-First Search(BFS)(or level order)and Depth First Search(DFS). 
+   DFS :- 1) Inorder (left  root  right)
+          2) preorder (root  left  right)
+          3) postorder (left  right  root) 
+   in the above, left always comes before right subtree

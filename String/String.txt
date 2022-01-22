@@ -1,0 +1,21 @@
+->string in java uses utp-16 and 16 bits to store whereas,
+  in cpp, used ascii value and 8 bits to store.
+->in cpp,we cannnot do cin>>"sudheer kumar"  //it takes only sudheer
+  sol for this prblm, we use getLine(cin,"sudheer kumar");
+->in java string class is by default "immutable".
+  i.e once created String str = "geeks"; //this cannnot be modified
+  if we want to modify, we have two mutable classes :-
+  StringBuffer :- thread safe class,we can use in multi-threaded 
+  StringBuilder:- not thread safe, used within the thread.
+->pattern searching:-   1 <= m <= naive
+  where, m -> pattern length , n -> txt length
+  1)naive method:-      //no preprocessing
+  for distinct elements :- O(n)   //improved naive method
+  for not distinct elements :- O((n-m+1)*m)
+  2) rabin karp algo :- O((n-m+1)*m)    //preprocessing pattern
+     rolling hash :- where we can compute the next hash using previous 
+                     hash in constant time.
+     rolling function :- t(i+1) = d(t(i) - t*t[i]*d^(m-1)) + t*t[i+m]
+                            //m -> length of pattern
+  3) KMP :- O(n)    //preprocessing pattern
+  4) suffix tree :- O(m)        //preprocessing text
