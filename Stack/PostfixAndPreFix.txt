@@ -1,0 +1,70 @@
+infix :-
+postfix :-
+prefx :- 
+
+-> Converting infix to postfix using Stack :- we use a Stack of operands
+   
+In naive method, we first fully parenthesised the expression and evaluate
+or convert the innermost expressions to postfix and then outer expression
+
+//efficient //theta(n)
+1) create an empty Stack, say stk;
+2) do following steps for every character x from left to right
+3) if 'x' is :-
+    a) operand : output it
+    b) left parenthesis : push to Stack
+    c) right parenthesis :pop from Stack until left parenthesis is found.
+                          and output the popped operators.
+    d) operator : if (Stack is empty), push 'x' to Stack
+                  else Compare with Stack top
+                  a) higher presedence(than stk top), push to stk
+                  b) lower presedence, pop stk top and output until a higher 
+                     presedence operator is found or stk become empty then push x to stk
+                  C) equal presedence, use associativity
+4) pop and output everytthing from stk.
+
+-> Evaluation Of postfix :- if a postfix expression is given, find the result.
+                            we use a Stack of operands. here, we cant use presedence and associativity rules.
+1) create an empty Stack stk.
+2) traverse through every symbol 'x' of given postfix
+   a) if x is operand ,push to stk
+   b) else (x is an operator)
+      1) op1 = stk.pop();
+      2) op2 = stk.pop();
+      3) compute op2  x  op1 and push the result to stk
+3) return stk.top();
+
+-> Converting infix to prefix using Stack :-
+
+In naive method, we first fully parenthesised the expression and evaluate
+or convert the innermost expressions to postfix and then outer expression
+
+//efficient theta(n)
+1) create an empty Stack, say stk;
+2) create an empty string ,prefix
+3) do following steps for every character c from right to left
+4) if c is :-
+      a) operand : push to prefix
+      b) right parenthesis : push to stk
+      c) left parenthesis : pop from stk until right parenthesis is found.
+                            append the popped character to prefix.
+      d) operator : if (stk is empty),push c to stk
+                  else , Compare with stk top : 
+                  1)higher presedence(than stk top) : push c to stk.
+                  2)lower presedence : pop stk top and append the popped
+                          iten to prefix until a higher presedence operator
+                          is found or stk become empty. push c to stk
+                  3)equal presedence : use associativity.
+5) pop everytthing from stk and append to prefix
+6) return reverse of prefix
+
+-> Evaluation Of prefix :- if a prefix expression is given, find the result.
+                            we use a Stack of operands. here, we cant use presedence and associativity rules.
+1) create an empty Stack stk.
+2) traverse through right to left forevery symbol 'x' of given prefix 
+   a) if x is operand ,push to stk
+   b) else (x is an operator)
+      1) op1 = stk.pop();
+      2) op2 = stk.pop();
+      3) compute op1  x  op2 and push the result to stk
+3) return stk.top();
