@@ -1,0 +1,73 @@
+-> Hashing takes O(1) average time to search, insert or delete elements.
+-> most used data structure in the world after Arrays
+-> Not useful for :- 
+   finding closest value (we use AVL tree or red black tree)
+   for sorted data (we use AVL tree or red black tree)
+   prefix searching (trie data structure)
+-> direct Address table i.e use index as keys for Arrays
+    -> does not work for large number of keys like phone numbers
+       does not work for floating point
+       does not work for string values like addresses
+-> hash function :-
+   if hash table size is 'm', then indexes of hash table will be from 0 - m-1
+-> collision handling
+   if two or more entities points to same key,then collision occur
+   to handle that we have two methods:- chaining,open addressing
+
+1) Chaining
+   hash table never fills,poor cache performance and required extra space
+   load factor "alpha" = n/m
+   where n = no of keys to be inserted
+         m = no of slots in the hash table
+   If uniform distubution of keys in the hash table by the hash function,then 
+   expected chain length = alpha
+   expected time to search,insert,delete = O(1+alpha) i.e(1, for hash function computation)
+-> data structres for Storing chains
+   1)linked list (not cache-friendly,O(l) where l = length of chain)
+   2)Dynamic sized arrays eg:- arrayList in java,vector in C++,etc
+                (cache-friendly,O(l) where l = length of chain)
+   3)self balancing BST eg:-AVL trees,etc O(log n),not cache-friendly
+-> better in performance,then open addressing
+2) Open addressing(alpha should be <=1)
+   no of slots in hash table >= no of keys to be inserted
+   cache friendly
+   resizeing the Array size is mandatory 
+   types:- 1)linear probing :- linearly search for next empty slot
+   hash(key,i) = (h(key)+i) % m,where h(key) = key%m
+   in linear probing, we have a problem called clustering(primary clustering), 
+   due to this problem all operationd becomes costly
+   2)qudratic probing :- better then linear probing, 
+   but still clustering(secondary clustering) prblm occur and
+   it does not find empty slot,even it contain empty slot
+   if alpha<0.5 and m is a prime,then it guarentee in finding empty slot
+   hash(key,i) = (h(key)+i^2) % m,where h(key) = key%m
+3) Double Hashing:-the concept of double hashing where 
+   two hash functions are used to perform the hashing operation.
+   hash(key,i) = (h1(key)+i*h2(key)) % m,where h1(key) = key%m
+   expected no of probes required = 1/(1-alpha)
+c++
+-> set works based on trees.
+-> Unordered_set in C++ 
+   works internally based on hashing.
+   it works only on keys, Unordered_map works on key-value pairs 
+   begin()end(),cbegin(),cend(),size(),empty() -> O(1)
+   insert(),erase(),find(),count() -> O(1) on average
+-> map based on red black tree and stores keys in ordered form(default increasing).
+   operations are O(log n) 
+-> Unordered_map in C++ (based on hashing)
+   is used to store key-value pairs
+   operations are O(1) on average.
+   begin(),end(),size(),empty() -> O(1) worstcase
+   count(),find(),erase(),insert(),[],at -> O(1) on average
+java
+set interface -> keys, map interface -> key-value
+-> Hashset in java
+   works on keys.
+   add(),remove(),contains()->O(1) on average
+   size,isempty()->O(1)
+-> HashMap in java
+   works on key-value pairs
+   put(),contains(),remove(),get() -> O(1) on average
+   size,isEmpty() -> O(1) in worstcase
+
+

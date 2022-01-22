@@ -1,0 +1,35 @@
+Deque means Doubly ended Queue.
+Implemented by Linked Lists (Doubly Linked Lists) and Array(circular Array).
+T.C of all methods are O(1).
+Applications Of Deque :-
+1) Deque can be used as both a Stack and Queue.
+2) maintaining history of actions. eg:- when there is a limited size buffer
+        we must start remove from front.
+3) A steal process Scheduing Algorithm
+4) implementing a priority queue with two types of priority
+5) ma/min of all subArray of size k in am=n Array.
+
+-> Array Deque class implements Deque class.where Deque is sub interface
+   of queue interface .Queue is a sub interface of Collections interface
+-> linked Lists implements both queue and list interface 
+-> ArrayDeque is faster than linked Lists on average because 
+   it is Array implementation. it can be used as Stack and queue and deque also
+   it is preferred ArrayDeque over LinkedLists in stacks because it provides single threaded environment.
+
+-> add(),remove(),element() throws exceptions
+   offer(),poll(),peek() return null/false
+
+-> addFirst(),addLast(),removeFirst(),removeLast(),getFirst(),getLast() throws exception
+   offerFirst(),offerLast(),pollFirst(),pollLast(),peekFirst(),peekLast() dont throw exception
+
+-> functions  ->  Same As
+   add()      ->  addLast()
+   remove()   ->  removeFirst()
+   poll()     ->  pollFirst()
+   offer()    ->  offerLast()
+   element()  ->  getFirst()
+   peek()     ->  peekFirst()
+   push()     ->  addFirst()
+   pop()      ->  removeFirst()
+
+->

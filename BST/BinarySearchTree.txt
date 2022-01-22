@@ -1,0 +1,58 @@
+            Array       Array       Linkedlist      BST         Hashtable
+           (sorted)   (unsorted)                 (balanced)
+
+Search      O(n)       O(logn)        O(n)        O(logn)         O(1)
+
+Insert      O(1)       O(n)           O(1)        O(logn)         O(1)
+                                    O(n)sorted    
+Delete      O(n)       O(n)           O(n)        O(logn)         O(1)
+
+Find        O(n)       O(logn)        O(n)        O(logn)         O(n)
+  closest(i.e floor and ceil)
+  
+Sorted    O(nlogn)     O(n)         O(nlogn)       O(n)         O(nlogn)
+Traversal                           O(n)sorted
+
+-> for every node, keys in left are smaller and keys in right are greater
+-> like linked list, it is a linked data structure
+-> not cache friendly
+-> In C++, it is implemented by map,set,multimap and multiset
+   in java, it is implemented by treeSet and treeMap
+
+Self Balancing BST:-
+1) balanced BST
+2) unbalanced BST, we should convert into balanced BST
+Rotation :- O(1) operation
+1) right Rotation
+2) left Rotation
+
+examples of Self Balancing BST are:-
+1) AVL Tree
+  -> strict in terms of balance
+  -> balance Factor = |lh - rh|
+  -> balance Factor <= 1
+2) Red-Black Tree 
+  -> slightly loose in terms of balance 
+  -> it causes less restructring
+  -> used in java and c++ tree libraries
+  -> search becomes costly operation beacause height increases
+  This is a self-balancing Binary Search Tree (BST) where 
+                  every node follows the following rules:
+  ->Every node has a color either red or black.
+  ->The root of tree is always black.
+  ->There are no two adjacent red nodes 
+    (A red node cannot have a red parent or red child).
+  ->Every path from a node (including root) to any of its 
+    descendant NULL node has the same number of black nodes.
+  -> no of nodes on the path from a node to its farthest descendent leaf
+     should not be more than twice the  no of nodes on the path from a node 
+     to its closest descendent leaf
+Applications Of BST:-
+-> to maintain sorted stream of data(or sorted set of data)
+-> to implement doubly ended priority queue
+-> to solve prblms like:- 
+    a) count smaller/greater in a stream
+    b) floor/ceiling in a stream
+Note :- if we have only search, insert, delete then it is recommended
+        to use hashing because all operations are O(1) but if we have 
+        floor/ceil/greater/smaller then we better use self-balancing BST
